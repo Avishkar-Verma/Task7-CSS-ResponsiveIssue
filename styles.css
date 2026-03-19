@@ -1,0 +1,261 @@
+/* =========================
+   1. Global Reset
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+/* To make images responsive everywhere and prevent layout overflow. */
+img{
+    max-width:100%;
+    height:auto;
+}
+
+
+/* =========================
+   2. Navbar
+========================= */
+
+.navbar{
+    background:#e6e6e6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 14px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+
+.logo{
+    flex: 0;
+}
+
+/* Navigation */
+
+.nav-links{
+    display: inline-block;
+    list-style: none;
+    flex: 1;
+    text-align: center;
+}
+
+.nav-links ul{
+    list-style:none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-links li>a{
+    text-decoration: none;
+    color: gray;
+    font-size:16px;
+}
+
+.nav-links li>a:hover{
+    color: #4882ed;
+}
+
+/* Username badge */
+
+.username{
+    background-color:#d3e7f6;
+    flex: 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color:#4a90e2;
+}
+
+/* =========================
+   3. Hero Section Layout
+========================= */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:13px 8%;
+}
+
+/* Allowing flex item to shrink smaller than its content. 
+    So there will be no layout breaks, this prevents overflow*/
+.leftDiv, .rightDiv{
+    min-width:0;
+}
+
+/* Left content */
+
+.leftDiv{
+    width: 45%;
+    max-width: 500px;
+    text-align: justify;
+}
+
+/* Right image container */
+
+.rightDiv{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hero > rightDiv > Image */
+
+.rightDiv img{
+    width: 100%;
+    max-width: 466px;
+    height: auto;
+    /* display:block, by this image becomes a block element, like div. 
+    it will removes the default inline image spacing or small gap kept by browser for inline element, 
+    which can also create scrollbars.*/
+    display: block;
+}
+
+/* =========================
+   4. Hero Content Styling
+========================= */
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    color: rgb(73, 87, 87);
+    line-height: 50px;
+}
+
+.serviceName{
+    color: #4a90e2;
+}
+
+p{
+    color: grey;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+}
+
+/* =========================
+   5. Button
+========================= */
+
+.btn{
+    color: white;
+    background-color: #4a90e2;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 11px;
+    padding: 20px 40px;
+    margin-top: 30px;
+    cursor:pointer;
+}
+
+.btn:active{
+    transform: scale(0.97);
+}
+
+/* =========================
+   6. Tablet Responsive
+========================= */
+
+@media (max-width: 1024px){
+
+    /* Navbar text sizes smaller */
+    .logo h2{
+        font-size:22px;
+    }
+
+    .nav-links li a{
+        font-size:14px;
+    }
+
+    .username h4{
+        font-size:13px;
+    }
+
+    /* Slightly reduce navbar padding */
+    .navbar{
+        padding:15px 40px;
+    }
+
+    /* Hero section adjustments */
+    h1{
+        font-size:32px;
+        line-height:40px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    /* Layout adjustment */
+
+    .leftDiv{
+        width:41%;
+    }
+
+    .rightDiv{
+        width:51%;
+    }
+
+    /* Image */
+
+    .rightDiv img{
+        max-width:320px;
+    }
+
+}
+
+/* =========================
+   7. Mobile Responsive
+========================= */
+
+@media (max-width: 600px){
+
+    /* Hide navigation */
+
+    .nav-links{
+        display:none;
+    }
+
+    /* Stack hero layout - to make layout vertically */
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding: 20px;
+    }
+
+    .leftDiv{
+        max-width:100%;
+    }
+
+    .leftDiv,.rightDiv{
+        width:100%;
+    }
+
+    /* Typography */
+
+    h1{
+        font-size:26px;
+        line-height:34px;
+    }
+
+    p{
+        font-size:14px;
+    }
+
+    /* Image */
+
+    .rightDiv img{
+        width:280px;
+        margin-top:20px;
+    }
+
+}
